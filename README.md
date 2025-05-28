@@ -21,7 +21,7 @@ Este repositorio contiene un script que despierta automáticamente tus aplicacio
 
 ## Uso
 
-- Automáticamente cada 5 minutos GitHub ejecutará el script.
+- Automáticamente cada X minutos GitHub ejecutará el script.
 - También puedes lanzarlo manualmente desde la pestaña **Actions**.
 
 ## Requisitos
