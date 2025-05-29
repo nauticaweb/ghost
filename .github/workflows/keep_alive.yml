@@ -2,8 +2,8 @@ name: Keep Apps Alive
 
 on:
   schedule:
-    - cron: '0 7 * * *'  # Ejecutar todos los días a las 07:00 UTC
-  workflow_dispatch:       # Permite lanzarlo manualmente desde GitHub UI
+    - cron: '0 */11 * * *'  # Ejecutar cada 11 horas
+  workflow_dispatch:         # Permite lanzarlo manualmente
 
 jobs:
   ping:
@@ -19,8 +19,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install playwright
+          playwright install chromium
 
-      - name: Run ping script
-        run: python ping_once.py
-
+      - name: Wake up apps with Playwright
+        run: python wake_up.py
