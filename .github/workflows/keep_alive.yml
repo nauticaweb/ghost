@@ -1,9 +1,7 @@
 name: Keep Apps Alive
 
 on:
-  schedule:
-    - cron: '0 */11 * * *'  # Ejecutar cada 11 horas
-  workflow_dispatch:         # Permite lanzarlo manualmente
+  workflow_dispatch:  # Solo ejecución manual
 
 jobs:
   ping:
