@@ -17,9 +17,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: |
-          pip install playwright
-          playwright install chromium
+        run: pip install requests
 
-      - name: Wake up apps with Playwright
+      - name: Wake up apps
         run: python wake_up.py
